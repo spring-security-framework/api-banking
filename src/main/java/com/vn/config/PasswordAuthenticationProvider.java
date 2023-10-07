@@ -35,6 +35,7 @@ public class PasswordAuthenticationProvider implements AuthenticationProvider {
         String pwd = authentication.getCredentials().toString();
 
         List<Customer> customers = customerRepo.findByEmail(username);
+
         if (customers.size() > 0) {
             if (passwordEncoder.matches(pwd,customers.get(0).getPwd())){
                 List<GrantedAuthority> authorities = new ArrayList<>();

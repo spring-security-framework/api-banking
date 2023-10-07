@@ -12,3 +12,7 @@ spring:
     hibernate.ddl-auto: update
     generate-ddl: true
     show-sql: true
+
+app:
+  ui:
+    uri: http://localhost:4200

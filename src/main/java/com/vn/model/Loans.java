@@ -1,6 +1,6 @@
 package com.vn.model;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -8,30 +8,39 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.GenericGenerator;
 
+import java.util.Date;
+
 @Entity
-@Table(name = "customer")
+@Table(name="loans")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-public class Customer {
+public class Loans {
+
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO,generator="native")
     @GenericGenerator(name = "native",strategy = "native")
+    @Column(name = "loan_number")
+    private Integer loanNumber;
+
     @Column(name = "customer_id")
-    private Integer id;
+    private Integer customerId;
 
-    private String name;
+    @Column(name="start_dt")
+    private Date startDt;
 
-    private String email;
+    @Column(name = "loan_type")
+    private String loanType;
 
-    @Column(name = "mobile_number")
-    private String mobileNumber;
+    @Column(name = "total_loan")
+    private Integer totalLoan;
 
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
-    private String pwd;
+    @Column(name = "amount_paid")
+    private Integer amountPaid;
 
-    private String role;
+    @Column(name = "outstanding_amount")
+    private Integer outstandingAmount;
 
     @Column(name = "create_dt")
     private String createDt;
