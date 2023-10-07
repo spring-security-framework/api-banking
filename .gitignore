@@ -1,0 +1,28 @@
+# Maven
+target/
+
+# IDE files
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Logs
+logs/
+*.log
+
+# Compiled Java classes
+*.class
+
+# Package files
+*.jar
+*.war
+*.ear
+
+# Generated files
+src/main/generated/
+src/test/generated/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
