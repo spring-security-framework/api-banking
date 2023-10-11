@@ -1,13 +1,13 @@
 server:
-  port: 8080
+  port: ${SERVER_PORT:8080}
 spring:
   application:
     name: banking-service
   datasource:
     driverClassName: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://127.0.0.1:3306/bank-project
-    username: ngochung1809
-    password: Ngochung1809!
+    url: jdbc:mysql://${DB_HOST:127.0.0.1}:${DB_PORT:3306}/${DB_NAME:bank-project}
+    username: ${DB_USER:ngochung1809}
+    password: ${DB_PASSWD:Ngochung1809!}
   jpa:
     hibernate.ddl-auto: update
     generate-ddl: true
@@ -15,4 +15,4 @@ spring:
 
 app:
   ui:
-    uri: http://localhost:4200
+    uri: ${UI_URI:http://localhost:4200}
